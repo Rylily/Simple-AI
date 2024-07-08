@@ -1,0 +1,43 @@
+wordlist=[]
+numlist = []
+mylist=[]
+
+Found=False
+
+while True:
+  string=input("Input: ")
+  if string=="end":
+    break
+  else:
+    if "what is" in string:
+      mylist=list(string.split()[-1])
+      mylist.pop()
+      text="".join(mylist)
+      Found=False
+      for i in range(len(wordlist)):
+        if text==wordlist[i]:
+          print("word")
+          Found=True
+          break
+        elif (wordlist[i] in text) or (text in wordlist[i]):
+          print("likely word")
+          Found=True
+          break
+      if Found==False:
+        for k in range(len(numlist)):
+          if text==numlist[k]:
+            print("number")
+            Found=True
+            break
+          elif (numlist[k] in text) or (text in numlist[k]):
+            print("likely number")
+            Found=True
+            break
+      if Found==False:
+        print("idk")
+    elif "is a word" in string:
+      wordlist.append(string.split()[0])
+      print("learning")
+    elif "is a number" in string:
+      numlist.append(string.split()[0])
+      print("learning")
