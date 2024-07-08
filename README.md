@@ -1,2 +1,1 @@
-# Simple-AI
-Python
+Simple AI that learns from user input. AI will not know anything until user inputs "(blank) is a word" or "(blank) is a number". Now when asked "what is (blank)" it prints out whether its likely a word or number.
